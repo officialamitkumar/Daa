@@ -1,162 +1,78 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<title>Daa-Bubble-Sort</title>
-<style>
-body {
-  font-family: "Lato", sans-serif;
-  color:lightskyblue
-}
-
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
- 
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: black;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color:rgba(0, 0, 255, 0.89);
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-  color: black;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-.theory{
-    
-    width: 1000px;
-    height: 250px
-    
-}
-h4{
-    color:black;
-}
-h2{
-    color:black;
-}
-
-.code{
-  background-color:lightcyan;
-  color:black;
-}
-.dfio{
- width:450px;
- color: black;
- background-color:lightcyan;
-}
-.bubble{
-  background-color:lightcyan;
-  color: black;
-}
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <title>Daa-Bubble-Sort</title>
 </head>
+
 <body>
+  <div class="container-fluid">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Design and Analysis Of Algorithms</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="bubble.html">Bubble Sort</a>
-  <div class="dropdown-divider"></div>
-  <label style="color: black;">Upcoming Programs</label>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
 
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" >Improvised Bubble Sort</a>
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Insertion Sort</a>
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Merge Sort</a>
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Quick Sort</a>
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Randomised Quick Sort</a>
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Heap Sort</a>
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Counting Sort</a>
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Bucket Sort</a>
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Radix Sort</a>
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Linear Search</a>
-  <a href="#"  class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Binary Search</a>
-
-</div>
-
-<div id="main">
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      
-      <a class="navbar-brand" href="#"> Design and Analysis of Algorithms</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Programs
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="bubble.html">Bubble Sort</a></li>
-              
-              
-            </ul>
-          </li>
-          
-        </ul>
-        
-      </div>
-    </div>
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Menu
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="bubble.html">Bubble Sort</a>
+                <div class="dropdown-divider"></div>
+                <ul>
+                  <label>Upcoming Programs</label>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item  text-muted" href="#">Improvised Bubble Sort</a>
+                  <a class="dropdown-item  text-muted" href="#">Insertion Sort</a>
+                  <a class="dropdown-item  text-muted" href="#">Merge Sort</a>
+                  <a class="dropdown-item  text-muted" href="#">Quick Sort</a>
+                  <a class="dropdown-item  text-muted" href="#">Randomised Quick Sort</a>
+                  <a class="dropdown-item  text-muted" href="#">Heap Sort</a>
+                  <a class="dropdown-item  text-muted" href="#">Counting Sort</a>
+                  <a class="dropdown-item  text-muted" href="#">Bucket Sort</a>
+                  <a class="dropdown-item  text-muted" href="#">Radix Sort</a>
+                  <a class="dropdown-item  text-muted" href="#">Linear Search</a>
+                  <a class="dropdown-item  text-muted" href="#">Binary Search</a>
+                </ul>
+              </div>
+            </li>
+            </li>
+          </ul>
+    </header>
+  </div>
   </nav>
-  <span style="font-size:30px;cursor:pointer; color:black;" onclick="openNav()">&#9776;Menu</span>
-  <br>
-  
   <div class="card text-center">
-    
     <div class="card-body">
       <h1 class="card-title">Bubble Sort</h1>
-     
       <p class="card-text"> Bubble sort is a simple sorting algorithm that repeatedly steps through the list,
         compares adjacent elements and swaps them if they are in the wrong order.<br>
-        The pass through the list is repeated until the list is sorted.This algorithm is not suitable for large data sets as its averageand worst case complexity are of Ο(n^2) <br> where n is the number of items.
-        In other words, we can say In bubble sort algorithm, array is traversed from first element to last element. Here, current element is<br>  compared with the next element. If current element is greater than the next element, it is swapped.</p>
-     
+        The pass through the list is repeated until the list is sorted.This algorithm is not suitable for large data
+        sets as its averageand worst case complexity are of Ο(n<sup>2</sup>) <br> where n is the number of items.
+        In other words, we can say In bubble sort algorithm, array is traversed from first element to last element.
+        Here, current element is<br> compared with the next element. If current element is greater than the next
+        element, it is swapped.</p>
     </div>
-    
   </div>
   <div class="card text-left">
-    
     <div class="card-body">
       <h2 class="card-title">Algorithm</h2>
-      <p class="card-text">  Bubble_sort(A, n)<br>
+      <p class="card-text"> Bubble_sort(A, n)<br>
         1. For i = 0 to n -1<br>
         2. For j = i+1 to n<br>
         3. If A[i] > A[j]<br>
@@ -164,238 +80,230 @@ h2{
         5. End if<br>
         6. End for<br>
         7. End for<br>
-  	  </p>
-     </div>
-    
-  </div>
- 
-<br>
-<h2>Program </h2>
-    
-<div class="row">
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">/*  Bubble sort Program*/</h5>
-        <p class="card-text">#include < stdio.h ><br>
-          int count=0; // to calculate the total running time of the algorithm<br>
-          void bubble_sort(int[],int); // bubble sort function declaration.<br>
-          void main()<br>
-          {<br>
-          void getdata(int[50],int); // input function declaration <br>
-          void putdata(int[50],int); // output function declaration<br>
-          int i,a[50],n; // array declaration and required variables declaration<br>
-          printf("\nEnter the Number of elements in array\n");<br>
-          scanf("%d",&n); // input the number of elemets in array<br>
-          getdata(a,n); // calling the input function<br>
-          printf("\n Array Before sorting \n");<br>
-          putdata(a,n); // calling the output function<br>
-          bubble_sort(a,n); // calling bubble sort function.<br>
-          printf("\nArray After sorting \n");<br>
-          putdata(a,n) // calling the output function after sorting ;<br>
-          printf("\nCount=%d \n",count);<br>
-          }</p>
-        
-      </div>
+      </p>
     </div>
   </div>
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">
-          input output function</h5>
-        <p class="card-text">// definition of input function<br>
-          void getdata(int x[50],int n)<br>
-          {<br>
-          int k;<br>
-          printf("enter the value for sorting\n");<br>
-          for(k=0 ; k < n; k++)<br>
-          {<br>
-          scanf("%d",&x[k]);<br>
-          }<br>
-          }<br>
-          // definition of output function<br>
-          void putdata(int x[50], int n)<br>
-          {<br>
-          int k;<br>
-          for(k=0;k< n;k++)<br>
-          {<br>
-          printf("%d\t",x[k]);<br>
-          }<br>
-          }</p>
-        
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">
-          input output function</h5>
-        <p class="card-text">void bubble_sort(int a[],int n)<br>
-          {<br>
-          int i,j,temp,min;<br>
-          count++;<br>
-          for(i=0;i< n-1;i++)<br>
-          {<br>
-          count++;<br>
-          for(j=i+1;j<br>
-          {<br>
-          count++;<br>
-          if(a[i] > a[j]) // comparing the values<br>
-          { // swapping the values<br>
-          count++;<br>
-          temp=a[i];<br>
-          count++;<br>
-          a[i]=a[j];<br>
-          count++;<br>
-          a[j]=temp;<br>
-          count++;<br>
-          }<br>
-          count++;<br>
-          }<br>
-          count++;<br>
-          }<br>
-          count++;<br>
-          }</p>
-        
-      </div>
-    </div>
-  </div>
-</div>
 
-<br><br>
-<p>
+  <br>
+  <h2>Program </h2>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">/* Bubble sort Program*/</h5>
+          <p class="card-text">#include < stdio.h><br>
+              int count=0; // to calculate the total running time of the algorithm<br>
+              void bubble_sort(int[],int); // bubble sort function declaration.<br>
+              void main()<br>
+              {<br>
+              void getdata(int[50],int); // input function declaration <br>
+              void putdata(int[50],int); // output function declaration<br>
+              int i,a[50],n; // array declaration and required variables declaration<br>
+              printf("\nEnter the Number of elements in array\n");<br>
+              scanf("%d",&n); // input the number of elemets in array<br>
+              getdata(a,n); // calling the input function<br>
+              printf("\n Array Before sorting \n");<br>
+              putdata(a,n); // calling the output function<br>
+              bubble_sort(a,n); // calling bubble sort function.<br>
+              printf("\nArray After sorting \n");<br>
+              putdata(a,n) // calling the output function after sorting ;<br>
+              printf("\nCount=%d \n",count);<br>
+              }</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            input output function</h5>
+          <p class="card-text">// definition of input function<br>
+            void getdata(int x[50],int n)<br>
+            {<br>
+            int k;<br>
+            printf("enter the value for sorting\n");<br>
+            for(k=0 ; k < n; k++)<br>
+              {<br>
+              scanf("%d",&x[k]);<br>
+              }<br>
+              }<br>
+              // definition of output function<br>
+              void putdata(int x[50], int n)<br>
+              {<br>
+              int k;<br>
+              for(k=0;k< n;k++)<br>
+                {<br>
+                printf("%d\t",x[k]);<br>
+                }<br>
+                }</p>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            Bubble sort function</h5>
+          <p class="card-text">void bubble_sort(int a[],int n)<br>
+            {<br>
+            int i,j,temp,min;<br>
+            count++;<br>
+            for(i=0;i< n-1;i++)<br>
+              {<br>
+              count++;<br>
+              for(j=i+1;j<br>
+              {<br>
+              count++;<br>
+              if(a[i] > a[j]) // comparing the values<br>
+              { // swapping the values<br>
+              count++;<br>
+              temp=a[i];<br>
+              count++;<br>
+              a[i]=a[j];<br>
+              count++;<br>
+              a[j]=temp;<br>
+              count++;<br>
+              }<br>
+              count++;<br>
+              }<br>
+              count++;<br>
+              }<br>
+              count++;<br>
+              }</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+  <p>
   <h2>Graph</h2>
-  <h5>Now we will run the following code 25 times to calculate its running time in best case average case and worst case.
+  <h5>Now we will run the following code 25 times to calculate its running time in best case average case and worst
+    case.
     <br> We Will Run the code 5 times for Best case, 5 times for Average case and 5 time for Worst case.
     Example: for best case we will take 5 inputs than 10 inputs than 15,20 and 25.
-    <br><b>Note:</b>For best case we wll give either sorted array or nearly sorted array,for average case we will give Random elements and for worst case we will give reversed aaray.
+    <br><b>Note:</b>For best case we wll give either sorted array or nearly sorted array,for average case we will give
+    Random elements and for worst case we will give reversed aaray.
     <br>For example i am running the program and calculating the value of cases for making graph.
   </h5>
-</p>
+  </p>
 
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">No of inputs</th>
-      <th scope="col">Best case</th>
-      <th scope="col">Average case</th>
-      <th scope="col">Worst case</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">5</th>
-      <td>30</td>
-      <td>54</td>
-      <td>70</td>
-    </tr>
-    <tr>
-      <th scope="row">10</th>
-      <td>110</td>
-      <td>202</td>
-      <td>290</td>
-    </tr>
-    <tr>
-      <th scope="row">15</th>
-      <td>240</td>
-      <td>416</td>
-      <td>660</td>
-    </tr>
-    <tr>
-      <th scope="row">20</th>
-      <td>420</td>
-      <td>668</td>
-      <td>1180</td>
-    </tr>
-    <tr>
-      <th scope="row">25</th>
-      <td>650</td>
-      <td>1074</td>
-      <td>1850</td>
-    </tr>
-  </tbody>
-</table>
-<h5><b>Note:</b>The value of Best Average orst case will be given by value of <b>count. Vaule of count can be different as it depends on the input.</b></h5><br>
-<p>
-  <h5>Now we will make the graph(line graph) of the above table using  Microsoft Excel.</h5>
-</p>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <img class="card-img-top" src="bubble.PNG" alt="Card image cap">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">No of inputs</th>
+        <th scope="col">Best case</th>
+        <th scope="col">Average case</th>
+        <th scope="col">Worst case</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">5</th>
+        <td>30</td>
+        <td>54</td>
+        <td>70</td>
+      </tr>
+      <tr>
+        <th scope="row">10</th>
+        <td>110</td>
+        <td>202</td>
+        <td>290</td>
+      </tr>
+      <tr>
+        <th scope="row">15</th>
+        <td>240</td>
+        <td>416</td>
+        <td>660</td>
+      </tr>
+      <tr>
+        <th scope="row">20</th>
+        <td>420</td>
+        <td>668</td>
+        <td>1180</td>
+      </tr>
+      <tr>
+        <th scope="row">25</th>
+        <td>650</td>
+        <td>1074</td>
+        <td>1850</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5><b>Note:</b>The value of Best Average orst case will be given by value of <b>count. Vaule of count can be
+      different as it depends on the input.</b></h5><br>
+  <p>
+  <h5>Now we will make the graph(line graph) of the above table using Microsoft Excel.</h5>
+  </p>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <img class="card-img-top" src="bubble.PNG" alt="Card image cap">
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+
+                <th scope="col">Case</th>
+                <th scope="col">Running Time:Growth of function mathematically</th>
+                <th scope="col">Running Time:Growth of function after observing graph </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Best case</th>
+                <td>O(n<sup>2</sup>)</td>
+                <td>O(n<sup>2</sup>)</td>
+
+              </tr>
+              <tr>
+                <th scope="row">Average case</th>
+                <td>O(n<sup>2</sup>)</td>
+                <td>O(n<sup>2</sup>)</td>
+
+              </tr>
+              <tr>
+                <th scope="row">Worst case</th>
+                <td>O(n<sup>2</sup>)</td>
+                <td>O(n<sup>2</sup>)</td>
+
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-           
-              <th scope="col">Case</th>
-              <th scope="col">Running Time:Growth of function mathematically</th>
-              <th scope="col">Running Time:Growth of function after observing graph </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Best case</th>
-              <td>O(n<sup>2</sup>)</td>
-              <td>O(n<sup>2</sup>)</td>
-              
-            </tr>
-            <tr>
-              <th scope="row">Average case</th>
-              <td>O(n<sup>2</sup>)</td>
-              <td>O(n<sup>2</sup>)</td>
-             
-            </tr>
-            <tr>
-              <th scope="row">Worst case</th>
-              <td>O(n<sup>2</sup>)</td>
-              <td>O(n<sup>2</sup>)</td>
-              
-            </tr>
-          </tbody>
-        </table>
-       
-      </div>
+  <footer>
+    <div class="card-footer text-muted">
+      ~By-AMIT KUMAR<br>
+      MCA STUDENT<br>
+      KIET GROUP OF INSTITUTIONS
     </div>
+  </footer>
   </div>
-</div>
 
-<div class="card-footer text-muted">
-  ~By-AMIT KUMAR<br>
-    MCA STUDENT<br>
-    KIET GROUP OF INSTITUTIONS
-  </div>
-   
-</div>
-
-
-
-
-<script>
-  function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-  }
-  
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-  }
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
 </body>
-</html> 
+
+</html>
