@@ -40,7 +40,7 @@
                 <label>Upcoming Programs</label>
                 <div class="dropdown-divider"></div>
                
-              
+                
                 <a class="dropdown-item  text-muted" href="#">Merge Sort</a>
                 <a class="dropdown-item  text-muted" href="#">Quick Sort</a>
                 <a class="dropdown-item  text-muted" href="#">Randomised Quick Sort</a>
@@ -60,27 +60,24 @@
     </nav>
     <div class="card text-center">
       <div class="card-body">
-        <h1 class="card-title">Improvised Bubble Sort</h1>
-        <p class="card-text"> Improvised Bubble Sort Algorithm is just a way of improving the Time Complexity in the best case of already sorted.<br>
-          This makes the time complexity O(n) in case of best-case instead of O(n<sup>2</sup>).While the complexity of average  and worst case will remain same as of
-          bubble sort i.e. O(n<sup>2</sup>).
-        </p>
+        <h1 class="card-title">Insertion Sort</h1>
+        <p class="card-text"> Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part.<br> Values from the unsorted part are picked and placed at the correct position in the sorted part.
       </div>
     </div>
     <div class="card text-left">
       <div class="card-body">
         <h2 class="card-title">Algorithm</h2>
-        <p class="card-text"> Improvised_Bubble_sort(A, n)<br>
-
-          1. Pass = 1<br>
-          2. For i = 0 to (n -1 && pass==1)<br>
-          3. Pass= -1<br>
-          4. For j = i+1 to n<br>
-          5. If A[i] > A[j]<br>
-          6. Then swap A[i] & A[j] && Pass = 1<br>
-          7. End if<br>
-          8. End for<br>
-          9. End for<br>
+        <p class="card-text"> 
+            INSERTION-SORT(A)<br>
+            1	for j = 2 to length[A]<br>
+            2	do key = A[ j ]<br>
+            3	// Insert A[ j ] into the sorted sequence A[1 . . j − 1].<br>
+            4	i = j − 1<br>
+            5	while i > 0 and A[i ] > key<br>
+            6	do A[i + 1] = A[i ]<br>
+            7	i = i − 1<br>
+            8	A[i + 1] ← key<br>
+            
           
         </p>
       </div>
@@ -92,25 +89,25 @@
       <div class="col-sm-4">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">/* Improvised Bubble sort Program*/</h5>
-            <p class="card-text">#include < stdio.h><br>
-                int count=0; // to calculate the total running time of the algorithm<br>
-                void improvised_bubble_sort(int[],int); // improvised bubble sort function declaration.<br>
-                void main()<br>
-                {<br>
-                void getdata(int[50],int); // input function declaration <br>
-                void putdata(int[50],int); // output function declaration<br>
-                int i,a[50],n; // array declaration and required variables declaration<br>
-                printf("\nEnter the Number of elements in array\n");<br>
-                scanf("%d",&n); // input the number of elemets in array<br>
-                getdata(a,n); // calling the input function<br>
-                printf("\n Array Before sorting \n");<br>
-                putdata(a,n); // calling the output function<br>
-                improvised_bubble_sort(a,n); // calling the improvised bubble sort function.<br>
-                printf("\nArray After sorting \n");<br>
-                putdata(a,n) // calling the output function after sorting ;<br>
-                printf("\nCount=%d \n",count);<br>
-                }</p>
+            <h5 class="card-title">/* Insertion sort Program*/</h5>
+            <p class="card-text">#include< stdio.h ><br>
+              int count=0;<br>
+              void main()<br>
+              {<br>
+                void getdata(int[10],int);		// input function declaration<br>
+                void putdata(int[10],int);		// output function declaration<br>
+                void insertion_sort(int a[],int);	//  insertion sort function declaration.<br>
+                int i,a[100],n;<br>
+                printf("Entr the Number of elements in array\n");<br>
+                scanf("%d",&n);<br>
+                getdata(a,n);		// function call of input function<br>
+                printf("\n Array before soring\n");<br>
+                putdata(a,n);		// function call output function.<br>
+                insertion_sort(a,n);	// function call insertion sort function<br>
+                printf("\nArray after sorting\n");<br>
+                putdata(a,n);		// function call output function<br>
+                printf("\n for n = %d value of count is  %d",n,count);<br>
+              }</p>
 
           </div>
         </div>
@@ -147,37 +144,37 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">
-              // function definition of Improvised bubble sort</h5>
-            <p class="card-text">void improvised_bubble_sort(int a[],int n)<br>
+              // function definition of insertion sort</h5>
+            <p class="card-text">
+              void insertion_sort(int a[],int n)<br>
               {<br>
-              int i,j,temp,min;<br>
-              int flag=1;<br>
-              count++;<br>
-              for(i=0;i< n-1 && flag==1;i++)<br>
-                {<br>
-                flag=-1;<br>
-                count++;<br>
-                for(j=i+1;j< n;j++) <br>
-                { <br>
-                  count++; <br>
-                  if(a[i] > a[j])<br>
-                  {<br>
-                  count++;<br>
-                  temp=a[i];<br>
-                  count++;<br>
-                  a[i]=a[j];<br>
-                  count++;<br>
-                  a[j]=temp;<br>
-                  count++;<br>
-                  flag=1;<br>
-                  count++;<br>
+                 int key,j,i;<br>
+                 count++;<br>
+              
+                 for(j=2;j< =n;j++)<br>
+                 {<br>
+                   count++;<br>
+                   key=a[j];<br>
+                   count++;<br>
+                   i=j-1;<br>
+                   count++;<br>
+                   while(i>0 && a[i]>key)<br>
+                   {<br>
+                    count++;<br>
+                    count++;<br>
+                    a[i+1]=a[i];<br>
+                    count++;<br>
+                    i=i-1;<br>
+                    count++;<br>
+              
+                    }<br>
+                    a[i+1]=key;<br>
+                    count++;<br>
+                    count++;<br>
+              
                   }<br>
-                  count++;<br>
-                  }<br>
-                  count++;<br>
-                  }<br>
-                  count++;<br>
-                  }
+              }	<br>
+              
             </p>
 
           </div>
@@ -210,33 +207,33 @@
       <tbody>
         <tr>
           <th scope="row">5</th>
-          <td>12</td>
-          <td>60</td>
-          <td>80</td>
+          <td>21</td>
+          <td>53</td>
+          <td>47</td>
         </tr>
         <tr>
           <th scope="row">10</th>
-          <td>22</td>
-          <td>220</td>
-          <td>335</td>
+          <td>46</td>
+          <td>138</td>
+          <td>172</td>
         </tr>
         <tr>
           <th scope="row">15</th>
-          <td>32</td>
-          <td>455</td>
-          <td>765</td>
+          <td>71</td>
+          <td>223</td>
+          <td>372</td>
         </tr>
         <tr>
           <th scope="row">20</th>
-          <td>42</td>
-          <td>805</td>
-          <td>1370</td>
+          <td>96</td>
+          <td>464</td>
+          <td>647</td>
         </tr>
         <tr>
           <th scope="row">25</th>
-          <td>52</td>
-          <td>1410</td>
-          <td>2150</td>
+          <td>121</td>
+          <td>616</td>
+          <td>997</td>
         </tr>
       </tbody>
     </table>
@@ -249,7 +246,7 @@
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
-            <img class="card-img-top" src="improvised.PNG" alt="Card image cap">
+            <img class="card-img-top" src="insertion.PNG" alt="Card image cap">
 
 
           </div>
