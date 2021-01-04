@@ -34,14 +34,15 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="bubble.html">Bubble Sort</a>
               <a class="dropdown-item " href="improvised.html">Improvised Bubble Sort</a>
-              <a class="dropdown-item "  href="insertion.html">Insertion Sort</a>
+              <a class="dropdown-item " href="insertion.html">Insertion Sort</a>
+              <a class="dropdown-item " href="merge.html">Merge Sort</a>
               <div class="dropdown-divider"></div>
               <ul>
                 <label>Upcoming Programs</label>
                 <div class="dropdown-divider"></div>
+
+
                
-                
-                <a class="dropdown-item  text-muted" href="#">Merge Sort</a>
                 <a class="dropdown-item  text-muted" href="#">Quick Sort</a>
                 <a class="dropdown-item  text-muted" href="#">Randomised Quick Sort</a>
                 <a class="dropdown-item  text-muted" href="#">Heap Sort</a>
@@ -61,24 +62,26 @@
     <div class="card text-center">
       <div class="card-body">
         <h1 class="card-title">Insertion Sort</h1>
-        <p class="card-text"> Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part.<br> Values from the unsorted part are picked and placed at the correct position in the sorted part.
+        <p class="card-text"> Insertion sort is a simple sorting algorithm that works similar to the way you sort
+          playing cards in your hands. The array is virtually split into a sorted and an unsorted part.<br>
+          Values from the unsorted part are picked and placed at the correct position in the sorted part.
       </div>
     </div>
     <div class="card text-left">
       <div class="card-body">
         <h2 class="card-title">Algorithm</h2>
-        <p class="card-text"> 
-            INSERTION-SORT(A)<br>
-            1	for j = 2 to length[A]<br>
-            2	do key = A[ j ]<br>
-            3	// Insert A[ j ] into the sorted sequence A[1 . . j − 1].<br>
-            4	i = j − 1<br>
-            5	while i > 0 and A[i ] > key<br>
-            6	do A[i + 1] = A[i ]<br>
-            7	i = i − 1<br>
-            8	A[i + 1] ← key<br>
-            
-          
+        <p class="card-text">
+          INSERTION-SORT(A)<br>
+          1 for j = 2 to length[A]<br>
+          2 do key = A[ j ]<br>
+          3 // Insert A[ j ] into the sorted sequence A[1 . . j − 1].<br>
+          4 i = j − 1<br>
+          5 while i > 0 and A[i ] > key<br>
+          6 do A[i + 1] = A[i ]<br>
+          7 i = i − 1<br>
+          8 A[i + 1] ← key<br>
+
+
         </p>
       </div>
     </div>
@@ -90,24 +93,24 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">/* Insertion sort Program*/</h5>
-            <p class="card-text">#include< stdio.h ><br>
-              int count=0;<br>
-              void main()<br>
-              {<br>
-                void getdata(int[10],int);		// input function declaration<br>
-                void putdata(int[10],int);		// output function declaration<br>
-                void insertion_sort(int a[],int);	//  insertion sort function declaration.<br>
+            <p class="card-text">#include< stdio.h><br>
+                int count=0;<br>
+                void main()<br>
+                {<br>
+                void getdata(int[10],int); // input function declaration<br>
+                void putdata(int[10],int); // output function declaration<br>
+                void insertion_sort(int a[],int); // insertion sort function declaration.<br>
                 int i,a[100],n;<br>
                 printf("Entr the Number of elements in array\n");<br>
                 scanf("%d",&n);<br>
-                getdata(a,n);		// function call of input function<br>
+                getdata(a,n); // function call of input function<br>
                 printf("\n Array before soring\n");<br>
-                putdata(a,n);		// function call output function.<br>
-                insertion_sort(a,n);	// function call insertion sort function<br>
+                putdata(a,n); // function call output function.<br>
+                insertion_sort(a,n); // function call insertion sort function<br>
                 printf("\nArray after sorting\n");<br>
-                putdata(a,n);		// function call output function<br>
-                printf("\n for n = %d value of count is  %d",n,count);<br>
-              }</p>
+                putdata(a,n); // function call output function<br>
+                printf("\n for n = %d value of count is %d",n,count);<br>
+                }</p>
 
           </div>
         </div>
@@ -148,33 +151,33 @@
             <p class="card-text">
               void insertion_sort(int a[],int n)<br>
               {<br>
-                 int key,j,i;<br>
-                 count++;<br>
-              
-                 for(j=2;j< =n;j++)<br>
-                 {<br>
-                   count++;<br>
-                   key=a[j];<br>
-                   count++;<br>
-                   i=j-1;<br>
-                   count++;<br>
-                   while(i>0 && a[i]>key)<br>
-                   {<br>
-                    count++;<br>
-                    count++;<br>
-                    a[i+1]=a[i];<br>
-                    count++;<br>
-                    i=i-1;<br>
-                    count++;<br>
-              
-                    }<br>
-                    a[i+1]=key;<br>
-                    count++;<br>
-                    count++;<br>
-              
-                  }<br>
-              }	<br>
-              
+              int key,j,i;<br>
+              count++;<br>
+
+              for(j=2;j<=n;j++)<br>
+                {<br>
+                count++;<br>
+                key=a[j];<br>
+                count++;<br>
+                i=j-1;<br>
+                count++;<br>
+                while(i>0 && a[i]>key)<br>
+                {<br>
+                count++;<br>
+                count++;<br>
+                a[i+1]=a[i];<br>
+                count++;<br>
+                i=i-1;<br>
+                count++;<br>
+
+                }<br>
+                a[i+1]=key;<br>
+                count++;<br>
+                count++;<br>
+
+                }<br>
+                } <br>
+
             </p>
 
           </div>

@@ -42,7 +42,7 @@
                 <div class="dropdown-divider"></div>
                
               
-                
+              
                 <a class="dropdown-item  text-muted" href="#">Quick Sort</a>
                 <a class="dropdown-item  text-muted" href="#">Randomised Quick Sort</a>
                 <a class="dropdown-item  text-muted" href="#">Heap Sort</a>
@@ -61,62 +61,93 @@
     </nav>
     <div class="card text-center">
       <div class="card-body">
-        <h1 class="card-title">Improvised Bubble Sort</h1>
-        <p class="card-text"> Improvised Bubble Sort Algorithm is just a way of improving the Time Complexity in the best case of already sorted.<br>
-          This makes the time complexity O(n) in case of best-case instead of O(n<sup>2</sup>).While the complexity of average  and worst case will remain same as of
-          bubble sort i.e. O(n<sup>2</sup>).
+        <h1 class="card-title">Merge Sort</h1>
+        <p class="card-text">Merge sort is a sorting technique based on divide and conquer technique. With worst-case time complexity being Ο(n log n),
+             <br>it is one of the most respected algorithms.Mergesort is a stable sort .
+            <br> Merge sort first divides the array into equal halves and then combines them in a sorted manner.
         </p>
       </div>
     </div>
-    <div class="card text-left">
-      <div class="card-body">
-        <h2 class="card-title">Algorithm</h2>
-        <p class="card-text"> Improvised_Bubble_sort(A, n)<br>
-
-          1. Pass = 1<br>
-          2. For i = 0 to (n -1 && pass==1)<br>
-          3. Pass= -1<br>
-          4. For j = i+1 to n<br>
-          5. If A[i] > A[j]<br>
-          6. Then swap A[i] & A[j] && Pass = 1<br>
-          7. End if<br>
-          8. End for<br>
-          9. End for<br>
-          
-        </p>
-      </div>
+   
+    <h2>Algorithm</h2>
+    <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Merge </h5>
+              <p class="card-text"> MERGE(A, p, q,r)<br>
+                1. n1 ← q − p + 1<br>
+                2. n2 ← r − q<br>
+                3. create arrays L[1 . . n1 + 1] and R[1 . . n2 + 1]<br>
+                4. for i ← 1 to n1<br>
+                5. do L[i] ← A[p + i − 1]<br>
+                6. for j ← 1 to n2<br>
+                7. do R[j] ← A[q + j]<br>
+                8. L[n1 + 1] ← <br>
+                9. R[n2 + 1] ← <br>
+                10. i ← 1<br>
+                11. j ← 1<br>
+                12. for k ← p to r<br>
+                13. do if L[i] ≤ R[j]<br>
+                14. then A[k] ← L[i]<br>
+                15. i ← i + 1<br>
+                16. else A[k] ← R[j]<br>
+                17. j ← j + 1<br>
+              </p>
+  
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Merge sort</h5>
+              <p class="card-text">  MERGE-SORT(A, p,r)<br>
+                1.	if p < r<br>
+                2.	2. then q ← (p + r)/2<br>
+                3.	3.  MERGE-SORT(A, p, q)<br>
+                4.	4.  MERGE-SORT(A, q + 1,r)<br>
+                5.	5. MERGE(A, p, q,r)<br>
+                </p>
+  
+            </div>
+          </div>
+        </div>
     </div>
 
     <br>
     <h2>Program </h2>
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">/* Improvised Bubble sort Program*/</h5>
-            <p class="card-text">#include < stdio.h><br>
-                int count=0; // to calculate the total running time of the algorithm<br>
-                void improvised_bubble_sort(int[],int); // improvised bubble sort function declaration.<br>
+            <h5 class="card-title">/* Merge sort Program*/</h5>
+            <p class="card-text">#include< stdio.h><br>
+                int count=0;<br>
+                void merge(int[10],int,int,int);<br>
                 void main()<br>
                 {<br>
-                void getdata(int[50],int); // input function declaration <br>
-                void putdata(int[50],int); // output function declaration<br>
-                int i,a[50],n; // array declaration and required variables declaration<br>
-                printf("\nEnter the Number of elements in array\n");<br>
-                scanf("%d",&n); // input the number of elemets in array<br>
-                getdata(a,n); // calling the input function<br>
-                printf("\n Array Before sorting \n");<br>
-                putdata(a,n); // calling the output function<br>
-                improvised_bubble_sort(a,n); // calling the improvised bubble sort function.<br>
-                printf("\nArray After sorting \n");<br>
-                putdata(a,n) // calling the output function after sorting ;<br>
-                printf("\nCount=%d \n",count);<br>
-                }</p>
+                    void getdata(int[10],int);<br>
+                    void putdata(int[10],int);<br>
+                    
+                    void merge_sort(int[10],int,int);<br>
+                    int i,a[100],n;<br>
+                    printf("enter the value of n\n");<br>
+                    scanf("%d",&n);<br>
+                    getdata(a,n);<br>
+                    printf("\nbefore soring\n");<br>
+                    putdata(a,n);<br>
+                    merge_sort(a,0,n-1);<br>
+                    printf("\nafter sorting\n");<br>
+                    putdata(a,n);<br>
+                    printf("\n for n = %d value of count is  %d",n,count);<br>
+                }<br>
+            </p>
 
           </div>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">
@@ -144,46 +175,97 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-3">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">
-              // function definition of Improvised bubble sort</h5>
-            <p class="card-text">void improvised_bubble_sort(int a[],int n)<br>
-              {<br>
-              int i,j,temp,min;<br>
-              int flag=1;<br>
-              count++;<br>
-              for(i=0;i< n-1 && flag==1;i++)<br>
+              input output function</h5>
+            <p class="card-text">// definition of merge sort<br>
+                void merge_sort(int a[],int p,int r)<br>
                 {<br>
-                flag=-1;<br>
-                count++;<br>
-                for(j=i+1;j< n;j++) <br>
-                { <br>
-                  count++; <br>
-                  if(a[i] > a[j])<br>
+                   int q;<br>
+                
+                     if(p< r)<br>
+                       {<br>
+                
+                        q=(p+r)/2;<br>
+                
+                        merge_sort(a,p,q);<br>
+                        merge_sort(a,q+1,r);<br>
+                        merge(a,p,q,r);<br>
+                
+                       }<br>
+                }</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              // function definition of Merge </h5>
+            <p class="card-text">
+               
+                 void merge(int a[],int p, int q, int r)
+                {<br>
+                  int n1,n2;<br>
+                  int i,j,k;<br>
+                  int l[100],r1[100];<br>
+                  n1=q-p+1;<br>
+                  count++;<br>
+                  n2=r-q;<br>
+                  count++;<br>
+                  l[n1]=999;<br>
+                  r1[n2]=999;<br>
+                  for(i=0;i< n1;i++)
                   {<br>
-                  count++;<br>
-                  temp=a[i];<br>
-                  count++;<br>
-                  a[i]=a[j];<br>
-                  count++;<br>
-                  a[j]=temp;<br>
-                  count++;<br>
-                  flag=1;<br>
-                  count++;<br>
+                    count++;<br>
+                    l[i]=a[p+i];<br>
+                    count++;
                   }<br>
                   count++;<br>
+                  for(j=0;j< n2;j++)
+                  {<br>
+                    count++;<br>
+                    r1[j]=a[q+j+1];<br>
+                    count++;
                   }<br>
                   count++;<br>
-                  }<br>
+                  i=0;<br>
                   count++;<br>
-                  }
+                  j=0;<br>
+                  count++;<br>
+                  for(k=p;k<=r;k++)
+                  {<br>
+                    count++;<br>
+                    if(l[i]< =r1[j])
+                    {<br>
+                        count++;<br>
+                        a[k]=l[i];<br>
+                        count++;<br>
+                        i=i+1;<br>
+                        count++;
+                    }<br>
+                    else
+                    {<br>
+                        count++;<br>
+                        a[k]=r1[j];<br>
+                        count++;<br>
+                        j=j+1;<br>
+                        count++;
+                    }<br>
+                    count++;
+                  }<br>
+                  count++;
+                 }		 
+                
             </p>
 
           </div>
         </div>
       </div>
+      
     </div>
 
     <br><br>
@@ -211,33 +293,33 @@
       <tbody>
         <tr>
           <th scope="row">5</th>
-          <td>12</td>
-          <td>60</td>
-          <td>80</td>
+          <td>112</td>
+          <td>112</td>
+          <td>112</td>
         </tr>
         <tr>
           <th scope="row">10</th>
-          <td>22</td>
-          <td>220</td>
-          <td>335</td>
+          <td>301</td>
+          <td>301</td>
+          <td>301</td>
         </tr>
         <tr>
           <th scope="row">15</th>
-          <td>32</td>
-          <td>455</td>
-          <td>765</td>
+          <td>511</td>
+          <td>511</td>
+          <td>511</td>
         </tr>
         <tr>
           <th scope="row">20</th>
-          <td>42</td>
-          <td>805</td>
-          <td>1370</td>
+          <td>749</td>
+          <td>749</td>
+          <td>749</td>
         </tr>
         <tr>
           <th scope="row">25</th>
-          <td>52</td>
-          <td>1410</td>
-          <td>2150</td>
+          <td>994</td>
+          <td>994</td>
+          <td>994</td>
         </tr>
       </tbody>
     </table>
@@ -250,7 +332,7 @@
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
-            <img class="card-img-top" src="improvised.PNG" alt="Card image cap">
+            <img class="card-img-top img-flex" src="merge.PNG" alt="Card image cap">
 
 
           </div>
@@ -271,20 +353,20 @@
               <tbody>
                 <tr>
                   <th scope="row">Best case</th>
-                  <td>O(n)</td>
-                  <td>O(n)</td>
+                  <td>O(nlogn)</td>
+                  <td>O(nlogn)</td>
 
                 </tr>
                 <tr>
                   <th scope="row">Average case</th>
-                  <td>O(n<sup>2</sup>)</td>
-                  <td>O(n<sup>2</sup>)</td>
+                  <td>O(nlogn)</td>
+                  <td>O(nlogn)</td>
 
                 </tr>
                 <tr>
                   <th scope="row">Worst case</th>
-                  <td>O(n<sup>2</sup>)</td>
-                  <td>O(n<sup>2</sup>)</td>
+                  <td>O(nlogn)</td>
+                  <td>O(nlogn)</td>
 
                 </tr>
               </tbody>
