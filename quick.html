@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Design and Analysis Of Algorithms</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Menu
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="bubble.html">Bubble Sort</a>
+                            <a class="dropdown-item " href="improvised.html">Improvised Bubble Sort</a>
+                            <a class="dropdown-item " href="insertion.html">Insertion Sort</a>
+                            <a class="dropdown-item " href="merge.html">Merge Sort</a>
+                            <a class="dropdown-item " href="quick.html">Quick Sort</a>
+                            <div class="dropdown-divider"></div>
+                            <ul>
+                                <label>Upcoming Programs</label>
+                                <div class="dropdown-divider"></div>
+
+
+
+
+                                <a class="dropdown-item  text-muted" href="#">Randomised Quick Sort</a>
+                                <a class="dropdown-item  text-muted" href="#">Heap Sort</a>
+                                <a class="dropdown-item  text-muted" href="#">Counting Sort</a>
+                                <a class="dropdown-item  text-muted" href="#">Bucket Sort</a>
+                                <a class="dropdown-item  text-muted" href="#">Radix Sort</a>
+                                <a class="dropdown-item  text-muted" href="#">Linear Search</a>
+                                <a class="dropdown-item  text-muted" href="#">Binary Search</a>
+                            </ul>
+                        </div>
+                    </li>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <div class="card text-center">
+            <div class="card-body">
+                <h1 class="card-title">Quick Sort</h1>
+                <p class="card-text"> QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and
+                    partitions the given array around the picked pivot.<br> There are many different versions of
+                    quickSort that pick pivot in different ways.<br>
+
+                    1. Always pick first element as pivot.<br>
+                    2. Always pick last element as pivot <br>
+                    3. Pick a random element as pivot.<br>
+                    4. Pick median as pivot.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                    The key process in quickSort is partition(). Target of partitions is, given an array and an element<br>
+                    x of array as pivot, put x at its correct position in sorted array and put all smaller elements<br>
+                    (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be<br>
+                    done in linear time.
+
+
+            </div>
+        </div>
+        <h2>Algorithm</h2>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Quick sort</h5>
+                        <p class="card-text">QUICKSORT (A, 1, n)<br>
+                            QUICKSORT (A, p, r)<br>
+                            1. if p < r<br>
+                                2. then q ←PARTITION(A, p, r )<br>
+                                3. QUICKSORT (A, p, q − 1)<br>
+                                4. QUICKSORT (A, q + 1, r)
+                                <br><br><br></p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Partition</h5>
+                        <p class="card-text">Partiton the subarray using below algorithm<br>
+                            PARTITION (A, p, r)<br>
+                            1. x ← A[r ]<br>
+                            2. i ←p –1
+                            3. for j ←p to r –1<br>
+                            4. if A[ j ] ≤ x<br>
+                            5. i ←i + 1<br>
+                            6. exchange A[i ] ↔A[ j ]<br>
+                            7. exchange A[i + 1] ↔ A[r ] </p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+        <h2>Program </h2>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">/* Quick sort Program*/</h5>
+                        <p class="card-text">#include< stdio.h><br>
+                                #include< conio.h><br>
+                                    int count=0;<br>
+                                    int partition(int[10],int,int);<br>
+                                    void main()<br>
+                                    {<br>
+                                    void getdata(int[10],int);<br>
+                                    void putdata(int[10],int);<br>
+
+                                    void quick_sort(int[10],int,int);<br>
+                                    int i,a[100],n;<br>
+                                    clrscr();<br>
+                                    printf("enter the value of n\n");<br>
+                                    scanf("%d",&n);<br>
+                                    getdata(a,n);<br>
+                                    printf("\nbefore soring\n");<br>
+                                    putdata(a,n);<br>
+
+                                    quick_sort(a,0,n-1);<br>
+
+                                    printf("\nafter sorting\n");<br>
+                                    putdata(a,n);<br>
+                                    printf("\n for n = %d value of count is %d",n,count);<br>
+                                    getch();<br>
+                                    }</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            input output function</h5>
+                        <p class="card-text">// definition of input function<br>
+                            void getdata(int x[50],int n)<br>
+                            {<br>
+                            int k;<br>
+                            printf("enter the value for sorting\n");<br>
+                            for(k=0 ; k < n; k++)<br>
+                                {<br>
+                                scanf("%d",&x[k]);<br>
+                                }<br>
+                                }<br>
+                                // definition of output function<br>
+                                void putdata(int x[50], int n)<br>
+                                {<br>
+                                int k;<br>
+                                for(k=0;k< n;k++)<br>
+                                    {<br>
+                                    printf("%d\t",x[k]);<br>
+                                    }<br>
+                                    }</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            partition</h5>
+                        <p class="card-text">// definition of partition<br>
+
+
+                            int partition(int a[],int p, int r)<br>
+                            {<br>
+                            int x,i,j,temp;<br>
+                            count++;<br>
+                            x=a[r];<br>
+                            count++;<br>
+                            i=p-1;<br>
+                            count++;<br>
+                            for(j=p;j<=r-1;j++)<br>
+                                {<br>
+                                Count++;<br>
+                                if(a[j]< x)<br>
+                                    {<br>
+                                    Count++;<br>
+                                    i=i+1;<br>
+                                    count++;<br>
+                                    temp=a[i];<br>
+                                    count++;<br>
+                                    a[i]=a[j];<br>
+                                    count++;<br>
+                                    a[j]=temp;<br>
+                                    count++;<br>
+                                    }<br>
+                                    Count++;<br>
+                                    }<br>
+                                    temp=a[i+1];<br>
+                                    count++;<br>
+                                    a[i+1]=a[r];<br>
+                                    count++;<br>
+                                    a[r]=temp;<br>
+                                    count++;<br>
+                                    return(i+1);<br>
+                                    }</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            quick sort function</h5>
+                        <p class="card-text"> // definition quick sort<br>
+                            void quick_sort(int a[],int p,int r)<br>
+                            {<br>
+                            int q;<br>
+
+                            if(p< r)<br>
+                                {<br>
+
+                                q=partition(a,p,r);<br>
+                                quick_sort(a,p,q-1);<br>
+                                quick_sort(a,q+1,r);<br>
+
+
+                                }<br>
+                                }<br>
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <p>
+        <h2>Graph</h2>
+        <h5>Now we will run the following code 25 times to calculate its running time in best case average case and
+            worst
+            case.
+            <br> We Will Run the code 5 times for Best case, 5 times for Average case and 5 time for Worst case.
+            Example: for best case we will take 5 inputs than 10 inputs than 15,20 and 25.
+            <br><b>Note:</b>For best case we wll give either sorted array or nearly sorted array,for average case we
+            will give
+            Random elements and for worst case we will give reversed array.
+            <br>For example i am running the program and calculating the value of cases for making graph.
+        </h5>
+        </p>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">No of inputs</th>
+                    <th scope="col">Best case</th>
+                    <th scope="col">Average case</th>
+                    <th scope="col">Worst case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>80</td>
+                    <td>60</td>
+                    <td>56</td>
+                </tr>
+                <tr>
+                    <th scope="row">10</th>
+                    <td>315</td>
+                    <td>154</td>
+                    <td>215</td>
+                </tr>
+                <tr>
+                    <th scope="row">15</th>
+                    <td>700</td>
+                    <td>246</td>
+                    <td>476</td>
+                </tr>
+                <tr>
+                    <th scope="row">20</th>
+                    <td>1235</td>
+                    <td>412</td>
+                    <td>835</td>
+                </tr>
+                <tr>
+                    <th scope="row">25</th>
+                    <td>1920</td>
+                    <td>422</td>
+                    <td>1135</td>
+                </tr>
+            </tbody>
+        </table>
+        <h5><b>Note:</b>The value of Best Average worst case will be given by value of <b>count. Vaule of count can be
+                different as it depends on the input.</b></h5><br>
+        <p>
+        <h5>Now we will make the graph(line graph) of the above table using Microsoft Excel.</h5>
+        </p>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <img class="card-img-top" src="quick.PNG" alt="Card image cap">
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+
+                                    <th scope="col">Case</th>
+                                    <th scope="col">Running Time:Growth of function mathematically</th>
+                                    <th scope="col">Running Time:Growth of function after observing graph </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Best case</th>
+                                    <td>O(nlogn)</td>
+                                    <td>O(nlogn)</td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">Average case</th>
+                                    <td>O(nlogn)</td>
+                                    <td>O(nlogn)</td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">Worst case</th>
+                                    <td>O(n<sup>2</sup>)</td>
+                                    <td>O(n<sup>2</sup>)</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer text-muted">
+            ~By-AMIT KUMAR<br>
+            MCA STUDENT<br>
+            KIET GROUP OF INSTITUTIONS
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
