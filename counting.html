@@ -39,7 +39,6 @@
                             <a class="dropdown-item " href="quick.html">Quick Sort</a>
                             <a class="dropdown-item " href="randomsed.html">Randomised Quick Sort</a>
                             <a class="dropdown-item " href="counting.html">Counting Sort</a>
-
                             <div class="dropdown-divider"></div>
                             <ul>
                                 <label>Upcoming Programs</label>
@@ -48,8 +47,9 @@
 
 
 
-                              
+
                                 <a class="dropdown-item  text-muted" href="#">Heap Sort</a>
+
                                 <a class="dropdown-item  text-muted" href="#">Bucket Sort</a>
                                 <a class="dropdown-item  text-muted" href="#">Radix Sort</a>
                                 <a class="dropdown-item  text-muted" href="#">Linear Search</a>
@@ -64,54 +64,39 @@
         </nav>
         <div class="card text-center">
             <div class="card-body">
-                <h1 class="card-title"> Randomised Quick Sort</h1>
-                <p class="card-text"> in Randomized Quick Sort, we use a random number to pick the next pivot (or we
-                    randomly shuffle the array).<br>the time complexity in randomised quick sort is of o(nlogn) in best , average and worst cases.<br>
-                    as compare to quick sort the worst case time complexity is good of randomised quick sort i.e. o(nlogn).
+                <h1 class="card-title"> Counting sort</h1>
+                <p class="card-text"> Counting sort is a sorting technique based on keys between a specific range. <br>
+                    It works by counting the number of objects having distinct key values (kind of hashing). <br>
+                    Then doing some arithmetic to calculate the position of each object in the output sequence.<br>
                 </p>
 
             </div>
         </div>
         <h2>Algorithm</h2>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Quick sort</h5>
-                        <p class="card-text">QUICKSORT (A, 1, n)<br>
-                            QUICKSORT (A, p, r)<br>
-                            1. if p < r<br>
-                                2. then q ←PARTITION(A, p, r )<br>
-                                3. QUICKSORT (A, p, q − 1)<br>
-                                4. QUICKSORT (A, q + 1, r)
-                                <br><br><br></p>
+                        <h5 class="card-title">Counting sort</h5>
+                        <p class="card-text">Counting_sort( Input: Array A, Size N) <br>
+                            1.for i < -0 to k <br>
+                                2. do C[i] < -0 <br>
+                                    3.for j<-1 to length [A] <br>
+                                        4. do C[A[j]] < -C[A[j]]+1 <br>
+                                            5.C[i] now contains the number of element equal to i. <br>
+                                            6.for i < -1 to k <br>
+                                                7. do C[i] < -C[i]+C[i-1] <br>
+                                                    8.C[i] now contains the number of elements less than or equal to
+                                                    i. <br>
+                                                    9.for j < -length [A] down to 1 <br>
+                                                        10. do B[C[A[j]]] < -A[j] <br>
+                                                            11. C[A[j]] < -C[A[j]]–1<br>
+                                                                <br><br><br></p>
 
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            Partition</h5>
-                        <p class="card-text">Partition and choosing random elements.<br>
-                            partition(a[], p, r)<br>
-                            pivot = a[r]<br>
-                            i = lo // place for swapping<br>
-                            for j := p to r – 1 do<br>
-                            if a[j] <=pivot then<br>
-                                swap a[i] with a[j] <br>
-                                i=i + 1 <br>
-                                swap a[i] with a[r]<br>
-                                return i<br>
-                                partition_r(a[], p, r) <br>
-                                r=Random Number from p to r <br>
-                                Swap a[r] and a[r] return<br>
-                                partition(a, p, r) <br>
-                        </p>
-                    </div>
-                </div>
-            </div>
+
 
         </div>
 
@@ -121,36 +106,28 @@
             <div class="col-sm-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">/*Randomised Quick sort Program*/</h5>
-                        <p class="card-text">#include< stdio.h><br>
-                                #include< conio.h><br>
-                                    #include< process.h><br>
-                                        #include< alloc.h><br>
-                                            #include< stdlib.h><br>
-                                                #include< time.h><br>
-                                                    int count=0;<br>
-                                                    int partition(int[10],int,int);<br>
-                                                    void main()<br>
-                                                    {<br>
-                                                    void getdata(int[10],int);<br>
-                                                    void putdata(int[10],int);<br>
-
-                                                    int myrand(int,int);<br>
-                                                    int i,a[100],n;<br>
-                                                    clrscr();<br>
-                                                    printf("enter the value of n\n");<br>
-                                                    scanf("%d",&n);<br>
-                                                    getdata(a,n);<br>
-                                                    printf("\nbefore soring\n");<br>
-                                                    putdata(a,n);<br>
-                                                    printf("hello");<br>
-                                                    partition(a,0,n-1);<br>
-                                                    printf("hello");<br>
-                                                    printf("\nafter sorting\n");<br>
-                                                    putdata(a,n);<br>
-                                                    printf("\n for n = %d value of count is %d",n,count);<br>
-                                                    getch();<br>
-                                                    }</p>
+                        <h5 class="card-title">/*Counting sort Program*/</h5>
+                        <p class="card-text" #include < stdio.h> <br>
+                            #include< conio.h> <br>
+                                int count=0; <br>
+                                int getdata(int[],int); <br>
+                                void putdata(int[],int); <br>
+                                int main()
+                                { <br>
+                                void counting_sort(int[],int[],int,int); <br>
+                                int a[100],b[100],n,k;<br>
+                                clrscr(); <br>
+                                printf("Enter the number of elements\n"); <br>
+                                scanf("%d",&n); <br>
+                                k=getdata(a,n); <br>
+                                counting_sort(a,b,k,n); <br>
+                                printf("\nEnter the elements:\n"); <br>
+                                putdata(a,n); <br>
+                                printf("\nsorted element:\n"); <br>
+                                putdata(b,n); <br>
+                                printf("\ncount %d is:%d",n,count); <br>
+                                getch();<br>
+                                }</p>
 
                     </div>
                 </div>
@@ -159,7 +136,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">
-                            input output function</h5>
+                            input function</h5>
                         <p class="card-text">// definition of input function<br>
                             void getdata(int x[50],int n)<br>
                             {<br>
@@ -170,62 +147,6 @@
                                 scanf("%d",&x[k]);<br>
                                 }<br>
                                 }<br>
-                                // definition of output function<br>
-                                void putdata(int x[50], int n)<br>
-                                {<br>
-                                int k;<br>
-                                for(k=0;k< n;k++)<br>
-                                    {<br>
-                                    printf("%d\t",x[k]);<br>
-                                    }<br>
-                                    }</p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            partition</h5>
-                        <p class="card-text">// definition of partition<br>
-
-
-
-                            int partition(int a[],int p, int r)
-                            {<br>
-                            int x,y,i,j,temp;<br>
-                            count++;<br>
-                            y=myrand(p,r-1);<br>
-                            count++;<br>
-                            temp=a[y];<br>
-                            count++;<br>
-                            a[y]=a[r];<br>
-                            count++;<br>
-                            a[r]=temp;<br>
-                            count++;<br>
-                            x=a[r];<br>
-                            count++;<br>
-                            i=p-1;<br>
-                            count++;<br>
-                            for(j=p;j<=r-1;j++) {<br>
-                                count++; if(a[j]< x) {<br>
-                                    count++;<br>
-                                    i=i+1;<br>
-                                    count++;<br>
-                                    temp=a[i]; <br>
-                                    count++;<br>
-                                    a[i]=a[j];<br>
-                                    count++;<br>
-                                    a[j]=temp; <br>
-                                    count++; <br>
-                                    } <br>
-                                    } <br>
-                                    temp=a[i+1];<br>
-                                    a[i+1]=a[r];<br>
-                                    a[r]=temp;<br>
-                                    return(i+1);<br>
-                                    } <br>
                         </p>
 
                     </div>
@@ -235,15 +156,46 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">
-                            random function</h5>
-                        <p class="card-text">
-                            int myrand(int lower,int upper)<br>
+                            output function</h5>
+                        <p class="card-text">// definition of partition<br>
+
+
+
+
+                            void putdata(int x[50], int n)<br>
                             {<br>
-                            int num;<br>
-                            srand(time(0));<br>
-                            num=(rand() % (upper - lower + 1)) + lower ;<br>
-                            return num;<br>
-                            }<br>
+                            int k;<br>
+                            for(k=0;k< n;k++)<br>
+                                {<br>
+                                printf("%d\t",x[k]);<br>
+                                }<br>
+                                }
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            counting function</h5>
+                        <p class="card-text">
+                            void counting_sort(int a[],int b[],int k,int n) <br>
+                            { <br>
+                            int i,j,C[200]; <br>
+                            count++; <br>
+                            for(i=0;i< =k;i++) { <br>
+                                count++; <br>
+                                C[i]=0; <br>
+                                count++; <br>
+                                } <br>
+                                count++; <br>
+                                for(j=1;j< =n;j++) { <br>
+                                    count++; <br>
+                                    C[a[j]]=C[a[j]]+1; <br>
+                                    count++; <br>
+                                    }<br>
 
                         </p>
 
@@ -279,33 +231,33 @@
             <tbody>
                 <tr>
                     <th scope="row">5</th>
-                    <td>57</td>
-                    <td>81</td>
-                    <td>69</td>
+                    <td>51</td>
+                    <td>51</td>
+                    <td>51</td>
                 </tr>
                 <tr>
                     <th scope="row">10</th>
-                    <td>177</td>
-                    <td>165</td>
-                    <td>169</td>
+                    <td>96</td>
+                    <td>96</td>
+                    <td>96</td>
                 </tr>
                 <tr>
                     <th scope="row">15</th>
-                    <td>235</td>
-                    <td>337</td>
-                    <td>277</td>
+                    <td>141</td>
+                    <td>141</td>
+                    <td>141</td>
                 </tr>
                 <tr>
                     <th scope="row">20</th>
-                    <td>427</td>
-                    <td>457</td>
-                    <td>413</td>
+                    <td>186</td>
+                    <td>186</td>
+                    <td>186</td>
                 </tr>
                 <tr>
                     <th scope="row">25</th>
-                    <td>509</td>
-                    <td>547</td>
-                    <td>575</td>
+                    <td>235</td>
+                    <td>235</td>
+                    <td>235</td>
                 </tr>
             </tbody>
         </table>
@@ -319,7 +271,7 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <img class="card-img-top" src="randomised.PNG" alt="Card image cap">
+                        <img class="card-img-top" src="counting.PNG" alt="Card image cap">
 
 
                     </div>
@@ -340,20 +292,20 @@
                             <tbody>
                                 <tr>
                                     <th scope="row">Best case</th>
-                                    <td>O(nlogn)</td>
-                                    <td>O(nlogn)</td>
+                                    <td>O(n)</td>
+                                    <td>O(n)</td>
 
                                 </tr>
                                 <tr>
                                     <th scope="row">Average case</th>
-                                    <td>O(nlogn)</td>
-                                    <td>O(nlogn)</td>
+                                    <td>O(n)</td>
+                                    <td>O(n)</td>
 
                                 </tr>
                                 <tr>
                                     <th scope="row">Worst case</th>
-                                    <td>O(nlogn)</td>
-                                    <td>O(nlogn)</td>
+                                    <td>O(n)</td>
+                                    <td>O(n)</td>
 
                                 </tr>
                             </tbody>
